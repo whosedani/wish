@@ -672,8 +672,10 @@
   <!-- TWEET EMBED -->
   <section class="tweet-section">
     <div class="tweet-container reveal">
-      <div class="tweet-wrapper" id="tweet-wrapper">
-        <!-- Tweet embed will be inserted here -->
+      <div class="tweet-wrapper">
+        <blockquote class="twitter-tweet" data-theme="light">
+          <a href="https://x.com/bryan_johnson/status/2032492867508400285"></a>
+        </blockquote>
       </div>
     </div>
   </section>
@@ -827,9 +829,6 @@
       document.getElementById('footer-twitter').href = CONFIG.twitterUrl;
       document.getElementById('footer-community').href = CONFIG.communityUrl;
 
-      // Embed tweet
-      embedTweet();
-
       // Init scroll reveals
       initScrollReveal();
     }
@@ -896,27 +895,10 @@
       });
     }
 
-    // ===== TWEET EMBED =====
-    function embedTweet() {
-      const wrapper = document.getElementById('tweet-wrapper');
-      const tweetId = CONFIG.tweetEmbedId;
-      if (!tweetId || tweetId === 'PASTE_TWEET_ID_HERE') return;
-
-      wrapper.innerHTML = `
-        <blockquote class="twitter-tweet" data-theme="light">
-          <a href="https://twitter.com/x/status/${tweetId}"></a>
-        </blockquote>
-      `;
-
-      const script = document.createElement('script');
-      script.src = 'https://platform.twitter.com/widgets.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-
     // ===== INIT =====
     document.addEventListener('DOMContentLoaded', loadConfig);
   </script>
+  <script async src="https://platform.twitter.com/widgets.js"></script>
 
 </body>
 </html>
