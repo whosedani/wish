@@ -603,6 +603,96 @@
       .buy-section { padding: 4rem 1.5rem; }
 
       .hero-buttons { flex-wrap: wrap; }
+
+      .trend-section { padding: 4rem 1.5rem; }
+
+      .trend-card { padding: 2rem 1.5rem; }
+
+      .trend-title { font-size: clamp(1.3rem, 4vw, 1.6rem); }
+    }
+
+    /* ============================================
+       TREND SECTION
+       ============================================ */
+
+    .trend-section {
+      padding: 5rem 1.5rem;
+      background: var(--bg);
+      position: relative;
+    }
+
+    .trend-card {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(135deg, var(--bg-surface), var(--bg-warm));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15), 0 0 80px rgba(226, 168, 75, 0.04);
+    }
+
+    .trend-label {
+      font-family: var(--font-accent);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .trend-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .trend-title span {
+      color: var(--gold);
+    }
+
+    .trend-desc {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--bg);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 14px 36px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 4px 20px rgba(226, 168, 75, 0.25);
+    }
+
+    .btn-trend:hover {
+      background: var(--gold-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(226, 168, 75, 0.35);
+    }
+
+    .btn-trend svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--bg);
     }
   </style>
 </head>
@@ -646,6 +736,19 @@
     </div>
     <div class="scroll-hint">
       <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- ==================== TREND SECTION ==================== -->
+  <section class="trend-section">
+    <div class="trend-card reveal">
+      <div class="trend-label">what's happening</div>
+      <div class="trend-title">"<span>sometimes I wish</span>" is a feeling<br>that became a movement on 𝕏</div>
+      <div class="trend-desc">Thousands of people sharing their deepest wishes, quiet thoughts, and honest confessions. A simple phrase that resonates with everyone. Now it lives on Solana.</div>
+      <a class="btn-trend" href="https://x.com/search?q=sometimes%20i%20wish&src=typed_query" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        See the trend on 𝕏
+      </a>
     </div>
   </section>
 
