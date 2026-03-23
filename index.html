@@ -11,25 +11,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #1A1408;
-      --bg-light: #231B0E;
-      --bg-warm: #2A2012;
-      --bg-surface: #302616;
+      --bg: #1C1710;
+      --bg-light: #252015;
+      --bg-warm: #2E2618;
+      --bg-surface: #362D1E;
 
-      --gold: #C4922A;
-      --gold-bright: #D4A535;
-      --gold-soft: #B8882A;
-      --gold-glow: rgba(196, 146, 42, 0.2);
-      --gold-glow-soft: rgba(196, 146, 42, 0.08);
-      --amber: #D4A035;
-      --amber-light: #E0B44A;
+      --gold: #E2A84B;
+      --gold-bright: #F0BC5E;
+      --gold-soft: #D4A040;
+      --gold-glow: rgba(226, 168, 75, 0.25);
+      --gold-glow-soft: rgba(226, 168, 75, 0.1);
+      --amber: #EBB450;
+      --amber-light: #F5C96A;
 
-      --text-primary: #F0E6D0;
-      --text-secondary: #B8A88A;
-      --text-muted: #7A6E58;
+      --text-primary: #FFF8EC;
+      --text-secondary: #D4C4A0;
+      --text-muted: #A89470;
 
-      --border: rgba(196, 146, 42, 0.12);
-      --border-light: rgba(196, 146, 42, 0.06);
+      --border: rgba(226, 168, 75, 0.15);
+      --border-light: rgba(226, 168, 75, 0.08);
 
       --font-display: 'Cormorant Garamond', serif;
       --font-body: 'Nunito', sans-serif;
@@ -110,7 +110,7 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 0;
-      background: radial-gradient(circle, rgba(196, 146, 42, 0.04), transparent);
+      background: radial-gradient(circle, rgba(226, 168, 75, 0.05), transparent);
     }
 
     /* ============================================
@@ -255,9 +255,9 @@
       pointer-events: none;
       background: linear-gradient(
         180deg,
-        rgba(26, 20, 8, 0.1) 0%,
-        rgba(26, 20, 8, 0.4) 50%,
-        rgba(26, 20, 8, 0.97) 100%
+        rgba(28, 23, 16, 0.05) 0%,
+        rgba(28, 23, 16, 0.3) 50%,
+        rgba(28, 23, 16, 0.95) 100%
       );
     }
 
@@ -271,9 +271,10 @@
     .hero-sometimes {
       font-family: var(--font-accent);
       font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--text-muted);
+      color: var(--amber-light);
       letter-spacing: 2px;
       opacity: 0;
+      text-shadow: 0 0 30px rgba(245, 201, 106, 0.4);
       animation: fadeInUp 1.5s ease-out forwards;
     }
 
@@ -383,7 +384,7 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 3rem 2.5rem;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(196, 146, 42, 0.04);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(226, 168, 75, 0.06);
       position: relative;
       min-height: 120px;
       display: flex;
@@ -535,9 +536,9 @@
       background: linear-gradient(
         180deg,
         var(--bg) 0%,
-        rgba(26, 20, 8, 1) 30%,
-        rgba(48, 38, 22, 0.8) 70%,
-        rgba(196, 146, 42, 0.05) 100%
+        rgba(28, 23, 16, 1) 30%,
+        rgba(54, 45, 30, 0.8) 70%,
+        rgba(226, 168, 75, 0.08) 100%
       );
     }
 
