@@ -6,24 +6,25 @@
   <title>$wish — Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FFFDF7;
-      --wheat: #D4A853;
-      --wheat-dark: #B8903A;
-      --text-primary: #3D2E1C;
-      --text-secondary: #6B5B4A;
-      --text-muted: #9B8E7E;
-      --border: rgba(180, 144, 58, 0.15);
+      --bg: #1A1408;
+      --bg-surface: #302616;
+      --gold: #C4922A;
+      --gold-bright: #D4A535;
+      --text-primary: #F0E6D0;
+      --text-secondary: #B8A88A;
+      --text-muted: #7A6E58;
+      --border: rgba(196, 146, 42, 0.12);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text-primary);
+      font-family: 'Nunito', sans-serif;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -31,191 +32,177 @@
       padding: 2rem;
     }
 
-    .admin-card {
+    .admin {
+      max-width: 460px;
       width: 100%;
-      max-width: 480px;
-      background: white;
-      border-radius: 16px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 24px rgba(180, 144, 58, 0.08);
     }
 
     .admin-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .admin-subtitle {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--gold);
+      text-align: center;
       margin-bottom: 2rem;
     }
 
     .field {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
 
     .field label {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
       margin-bottom: 0.4rem;
     }
 
     .field input {
       width: 100%;
-      padding: 0.7rem 1rem;
+      background: var(--bg-surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
+      border-radius: 12px;
+      padding: 0.8rem 1rem;
       color: var(--text-primary);
-      background: var(--bg);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.85rem;
       outline: none;
       transition: border-color 0.3s;
     }
 
     .field input:focus {
-      border-color: var(--wheat);
+      border-color: var(--gold);
     }
 
-    .admin-btn {
+    .field input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .btn-save {
       width: 100%;
-      padding: 0.8rem;
-      background: var(--wheat);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
+      margin-top: 1rem;
+      background: var(--gold);
+      color: var(--bg);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
       font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px;
+      border-radius: 9999px;
+      border: none;
       cursor: pointer;
       transition: background 0.3s;
-      margin-top: 0.5rem;
     }
 
-    .admin-btn:hover {
-      background: var(--wheat-dark);
+    .btn-save:hover {
+      background: var(--gold-bright);
     }
 
     .status {
+      text-align: center;
       margin-top: 1rem;
       font-size: 0.8rem;
-      text-align: center;
-      min-height: 1.2em;
+      min-height: 1.2rem;
+      transition: color 0.3s;
     }
 
-    .status.success { color: #4a9; }
-    .status.error { color: #c55; }
+    .status.success { color: #6abf69; }
+    .status.error { color: #d4453a; }
   </style>
 </head>
 <body>
-  <div class="admin-card">
-    <div class="admin-title">$wish config</div>
-    <div class="admin-subtitle">Update site configuration</div>
+  <div class="admin">
+    <div class="admin-title">wish admin</div>
 
     <div class="field">
-      <label>Contract Address (CA)</label>
-      <input type="text" id="ca" placeholder="Paste contract address">
+      <label>Contract Address</label>
+      <input type="text" id="ca" placeholder="Paste CA...">
     </div>
+
     <div class="field">
       <label>Twitter URL</label>
       <input type="text" id="twitterUrl" placeholder="https://twitter.com/...">
     </div>
+
     <div class="field">
       <label>Community URL</label>
       <input type="text" id="communityUrl" placeholder="https://twitter.com/i/communities/...">
     </div>
+
     <div class="field">
       <label>Buy URL</label>
       <input type="text" id="buyUrl" placeholder="https://jup.ag/swap/SOL-...">
     </div>
-    <div class="field">
-      <label>Tweet Embed ID</label>
-      <input type="text" id="tweetEmbedId" placeholder="Tweet ID for embed">
-    </div>
+
     <div class="field">
       <label>Password</label>
       <input type="password" id="password" placeholder="Admin password">
     </div>
 
-    <button class="admin-btn" onclick="saveConfig()">Save Configuration</button>
+    <button class="btn-save" onclick="saveConfig()">Save Config</button>
     <div class="status" id="status"></div>
   </div>
 
   <script>
-    // Load current config
-    async function loadCurrentConfig() {
+    function showStatus(msg, type) {
+      var el = document.getElementById('status');
+      el.textContent = msg;
+      el.className = 'status ' + type;
+      setTimeout(function() { el.textContent = ''; el.className = 'status'; }, 3000);
+    }
+
+    async function saveConfig() {
+      var password = document.getElementById('password').value;
+      if (!password) { showStatus('Enter password', 'error'); return; }
+
+      var encoder = new TextEncoder();
+      var hashBuffer = await crypto.subtle.digest('SHA-256', encoder.encode(password));
+      var hashArray = Array.from(new Uint8Array(hashBuffer));
+      var passwordHash = hashArray.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+
+      var configData = {
+        passwordHash: passwordHash,
+        ca: document.getElementById('ca').value,
+        twitterUrl: document.getElementById('twitterUrl').value,
+        communityUrl: document.getElementById('communityUrl').value,
+        buyUrl: document.getElementById('buyUrl').value
+      };
+
       try {
-        const res = await fetch('/api/config');
+        var res = await fetch('/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(configData)
+        });
+        if (res.ok) showStatus('Saved', 'success');
+        else if (res.status === 401) showStatus('Wrong password', 'error');
+        else showStatus('Failed to save', 'error');
+      } catch (e) {
+        showStatus('Connection error', 'error');
+      }
+    }
+
+    async function loadConfig() {
+      try {
+        var res = await fetch('/api/config');
         if (res.ok) {
-          const data = await res.json();
-          if (data && Object.keys(data).length > 0) {
-            if (data.ca) document.getElementById('ca').value = data.ca;
-            if (data.twitterUrl) document.getElementById('twitterUrl').value = data.twitterUrl;
-            if (data.communityUrl) document.getElementById('communityUrl').value = data.communityUrl;
-            if (data.buyUrl) document.getElementById('buyUrl').value = data.buyUrl;
-            if (data.tweetEmbedId) document.getElementById('tweetEmbedId').value = data.tweetEmbedId;
-          }
+          var data = await res.json();
+          if (data.ca) document.getElementById('ca').value = data.ca;
+          if (data.twitterUrl) document.getElementById('twitterUrl').value = data.twitterUrl;
+          if (data.communityUrl) document.getElementById('communityUrl').value = data.communityUrl;
+          if (data.buyUrl) document.getElementById('buyUrl').value = data.buyUrl;
         }
       } catch (e) {
         console.log('Could not load config');
       }
     }
 
-    function showStatus(message, type) {
-      const el = document.getElementById('status');
-      el.textContent = message;
-      el.className = 'status ' + type;
-    }
-
-    async function saveConfig() {
-      const password = document.getElementById('password').value;
-      if (!password) {
-        showStatus('Please enter password', 'error');
-        return;
-      }
-
-      const encoder = new TextEncoder();
-      const data = encoder.encode(password);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      const passwordHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-      const configData = {
-        passwordHash,
-        ca: document.getElementById('ca').value,
-        twitterUrl: document.getElementById('twitterUrl').value,
-        communityUrl: document.getElementById('communityUrl').value,
-        buyUrl: document.getElementById('buyUrl').value,
-        tweetEmbedId: document.getElementById('tweetEmbedId').value,
-      };
-
-      try {
-        const res = await fetch('/api/config', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(configData)
-        });
-
-        if (res.ok) {
-          showStatus('Configuration saved successfully', 'success');
-        } else if (res.status === 401) {
-          showStatus('Error: invalid password', 'error');
-        } else {
-          showStatus('Error: failed to save', 'error');
-        }
-      } catch (e) {
-        showStatus('Error: check connection', 'error');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', loadCurrentConfig);
+    document.addEventListener('DOMContentLoaded', loadConfig);
   </script>
 </body>
 </html>
