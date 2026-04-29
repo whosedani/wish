@@ -1,7 +1,7 @@
 {
   "name": "wish",
   "version": "1.0.0",
-  "description": "sometimes I wish — $wish on Solana",
+  "description": "I wish — $wish on Solana",
   "dependencies": {
     "@vercel/kv": "^2.0.0"
   }

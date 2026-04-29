@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$wish — sometimes I wish</title>
-  <meta name="description" content="sometimes I wish... A memecoin on Solana for dreamers, thinkers, and wishers.">
+  <title>$wish — I wish</title>
+  <meta name="description" content="I wish... A memecoin on Solana for dreamers, thinkers, and wishers.">
   <link rel="icon" href="./static/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -266,16 +266,6 @@
       z-index: 5;
       text-align: center;
       padding: 0 1.5rem;
-    }
-
-    .hero-sometimes {
-      font-family: var(--font-accent);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--amber-light);
-      letter-spacing: 2px;
-      opacity: 0;
-      text-shadow: 0 0 30px rgba(245, 201, 106, 0.4);
-      animation: fadeInUp 1.5s ease-out forwards;
     }
 
     .hero-iwish {
@@ -694,6 +684,35 @@
       height: 18px;
       fill: var(--bg);
     }
+
+    /* ============================================
+       TWEET EMBED
+       ============================================ */
+
+    .tweet-section {
+      padding: 0 1.5rem 5rem;
+      background: var(--bg);
+    }
+
+    .tweet-wrapper {
+      max-width: 550px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1rem;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15), 0 0 80px rgba(226, 168, 75, 0.04);
+      overflow: hidden;
+    }
+
+    .tweet-wrapper .twitter-tweet {
+      margin: 0 auto !important;
+    }
+
+    @media (max-width: 768px) {
+      .tweet-section { padding: 0 1.5rem 3rem; }
+      .tweet-wrapper { padding: 0.75rem; border-radius: 20px; }
+    }
   </style>
 </head>
 <body>
@@ -722,7 +741,6 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-sometimes">sometimes</div>
       <h1 class="hero-iwish">I wish</h1>
       <div class="hero-buttons">
         <button class="btn-buy" id="btnBuy">BUY $WISH</button>
@@ -743,14 +761,24 @@
   <section class="trend-section">
     <div class="trend-card reveal">
       <div class="trend-label">what's happening</div>
-      <div class="trend-title">"<span>sometimes I wish</span>" is a feeling<br>that became a movement on 𝕏</div>
-      <div class="trend-desc">Thousands of people sharing their deepest wishes, quiet thoughts, and honest confessions. A simple phrase that resonates with everyone. Now it lives on Solana.</div>
-      <a class="btn-trend" href="https://x.com/search?q=sometimes%20i%20wish&src=typed_query" target="_blank" rel="noopener">
+      <div class="trend-title">today, april 29, is <span>National Wish Day</span></div>
+      <div class="trend-desc">Make a wish today — anything you want — and it will come true. Every second, people are tweeting about their wishes. Let's make them come true.</div>
+      <a class="btn-trend" href="https://x.com/search?q=wish&src=typed_query&f=live" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         See the trend on 𝕏
       </a>
     </div>
   </section>
+
+  <!-- ==================== TWEET EMBED ==================== -->
+  <section class="tweet-section">
+    <div class="tweet-wrapper reveal">
+      <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none">
+        <a href="https://twitter.com/PopBase/status/2049342410245709848"></a>
+      </blockquote>
+    </div>
+  </section>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <!-- ==================== WISH GENERATOR ==================== -->
   <section class="wish-section">
@@ -803,7 +831,7 @@
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-quote reveal">sometimes wishing is enough.</div>
+      <div class="footer-quote reveal">wishing is enough.</div>
       <div class="footer-links">
         <a class="footer-link" id="footerTwitter" href="#" target="_blank" rel="noopener">twitter</a>
         <a class="footer-link" id="footerCommunity" href="#" target="_blank" rel="noopener">community</a>
@@ -862,41 +890,41 @@
        WISHES
        ============================================ */
     const wishes = [
-      "sometimes I wish jobs didn't exist and that humans were free to just enjoy their existence on this planet.",
-      "sometimes I wish I could go back to being a kid when the biggest problem was what to watch on TV.",
-      "sometimes I wish I could pause life and just sit somewhere quiet for a year.",
-      "sometimes I wish people said what they actually meant.",
-      "sometimes I wish I could remember what it felt like to be bored. real bored. not scrolling bored.",
-      "sometimes I wish weekends lasted longer than the blink of an eye.",
-      "sometimes I wish I could talk to the version of me from 10 years ago.",
-      "sometimes I wish the world moved a little slower.",
-      "sometimes I wish I never discovered pump.fun.",
-      "sometimes I wish I sold at the top. just once.",
-      "sometimes I wish charts didn't exist and I could just hold in peace.",
-      "sometimes I wish someone told me earlier that the 100x was never the goal.",
-      "sometimes I wish I could mass unsee every rug I've been through.",
-      "sometimes I wish my screen time wasn't 14 hours.",
-      "sometimes I wish CT was real life and real life was CT. then I remember how toxic CT is.",
-      "sometimes I wish I got into crypto for the tech. but we both know that's not why.",
-      "sometimes I wish dexscreener had a bedtime mode.",
-      "sometimes I wish I could feel the way music makes me feel but all the time.",
-      "sometimes I wish silence wasn't so hard to find.",
-      "sometimes I wish everyone could see sunsets like this one.",
-      "sometimes I wish I could bottle this exact moment and open it later.",
-      "sometimes I wish we didn't need money to live the life we actually want.",
-      "sometimes I wish growing up was optional.",
-      "sometimes I wish the internet had an off switch and someone would just flip it.",
-      "sometimes I wish wishing was enough."
+      "I wish jobs didn't exist and that humans were free to just enjoy their existence on this planet.",
+      "I wish I could go back to being a kid when the biggest problem was what to watch on TV.",
+      "I wish I could pause life and just sit somewhere quiet for a year.",
+      "I wish people said what they actually meant.",
+      "I wish I could remember what it felt like to be bored. real bored. not scrolling bored.",
+      "I wish weekends lasted longer than the blink of an eye.",
+      "I wish I could talk to the version of me from 10 years ago.",
+      "I wish the world moved a little slower.",
+      "I wish I never discovered pump.fun.",
+      "I wish I sold at the top. just once.",
+      "I wish charts didn't exist and I could just hold in peace.",
+      "I wish someone told me earlier that the 100x was never the goal.",
+      "I wish I could mass unsee every rug I've been through.",
+      "I wish my screen time wasn't 14 hours.",
+      "I wish CT was real life and real life was CT. then I remember how toxic CT is.",
+      "I wish I got into crypto for the tech. but we both know that's not why.",
+      "I wish dexscreener had a bedtime mode.",
+      "I wish I could feel the way music makes me feel but all the time.",
+      "I wish silence wasn't so hard to find.",
+      "I wish everyone could see sunsets like this one.",
+      "I wish I could bottle this exact moment and open it later.",
+      "I wish we didn't need money to live the life we actually want.",
+      "I wish growing up was optional.",
+      "I wish the internet had an off switch and someone would just flip it.",
+      "I wish wishing was enough."
     ];
 
     let currentWishIndex = Math.floor(Math.random() * wishes.length);
 
     function renderWish(index) {
       var text = wishes[index];
-      var prefix = "sometimes I wish ";
+      var prefix = "I wish ";
       var rest = text.startsWith(prefix) ? text.slice(prefix.length) : text;
       document.getElementById('wishText').innerHTML =
-        '<span class="wish-prefix">sometimes I wish </span>' + rest;
+        '<span class="wish-prefix">I wish </span>' + rest;
     }
 
     function changeWish() {
