@@ -79,11 +79,6 @@
       50% { transform: translateY(-4px); }
     }
 
-    @keyframes scrollHint {
-      0%, 100% { opacity: 0.3; transform: translateY(0); }
-      50% { opacity: 0.8; transform: translateY(6px); }
-    }
-
     @keyframes ambientFloat {
       0%, 100% { transform: translate(0, 0); }
       33% { transform: translate(var(--fx), var(--fy)); }
@@ -332,23 +327,6 @@
     }
 
     .hero-icon-btn:hover svg { fill: var(--gold); }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-      animation: scrollHint 3s infinite;
-    }
-
-    .scroll-hint svg {
-      width: 20px;
-      height: 20px;
-      fill: none;
-      stroke: var(--text-muted);
-      stroke-width: 2;
-    }
 
     /* ============================================
        WISH GENERATOR
@@ -686,32 +664,27 @@
     }
 
     /* ============================================
-       TWEET EMBED
+       HERO TWEET EMBED
        ============================================ */
 
-    .tweet-section {
-      padding: 4rem 1.5rem 3rem;
-      background: var(--bg);
+    .hero-tweet {
+      position: absolute;
+      left: 50%;
+      top: 80%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      width: 90%;
+      max-width: 450px;
+      background: transparent;
+      pointer-events: auto;
     }
 
-    .tweet-wrapper {
-      max-width: 650px;
-      margin: 0 auto;
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15), 0 0 80px rgba(226, 168, 75, 0.04);
-      overflow: hidden;
-    }
-
-    .tweet-wrapper .twitter-tweet {
+    .hero-tweet .twitter-tweet {
       margin: 0 auto !important;
     }
 
     @media (max-width: 768px) {
-      .tweet-section { padding: 3rem 1.5rem; }
-      .tweet-wrapper { padding: 1rem; border-radius: 20px; }
+      .hero-tweet { max-width: 360px; top: 82%; }
     }
   </style>
 </head>
@@ -752,10 +725,13 @@
         </a>
       </div>
     </div>
-    <div class="scroll-hint">
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    <div class="hero-tweet">
+      <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none">
+        <a href="https://twitter.com/PopBase/status/2049342410245709848"></a>
+      </blockquote>
     </div>
   </section>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <!-- ==================== TREND SECTION ==================== -->
   <section class="trend-section">
@@ -769,16 +745,6 @@
       </a>
     </div>
   </section>
-
-  <!-- ==================== TWEET EMBED ==================== -->
-  <section class="tweet-section">
-    <div class="tweet-wrapper reveal">
-      <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none">
-        <a href="https://twitter.com/PopBase/status/2049342410245709848"></a>
-      </blockquote>
-    </div>
-  </section>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   <!-- ==================== WISH GENERATOR ==================== -->
   <section class="wish-section">
