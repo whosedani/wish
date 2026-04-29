@@ -79,6 +79,16 @@
       50% { transform: translateY(-4px); }
     }
 
+    @keyframes scrollHint {
+      0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.8; transform: translateX(-50%) translateY(6px); }
+    }
+
+    @keyframes heroTweetFadeIn {
+      from { opacity: 0; transform: translate(-50%, calc(-50% + 20px)); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
     @keyframes ambientFloat {
       0%, 100% { transform: translate(0, 0); }
       33% { transform: translate(var(--fx), var(--fy)); }
@@ -670,21 +680,40 @@
     .hero-tweet {
       position: absolute;
       left: 50%;
-      top: 80%;
-      transform: translate(-50%, -50%);
+      top: 78%;
+      transform: translate(-50%, calc(-50% + 20px));
+      opacity: 0;
       z-index: 5;
       width: 90%;
       max-width: 450px;
       background: transparent;
       pointer-events: auto;
+      animation: heroTweetFadeIn 1.5s ease-out 1.2s forwards;
     }
 
     .hero-tweet .twitter-tweet {
       margin: 0 auto !important;
     }
 
+    .scroll-hint {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      animation: scrollHint 3s infinite;
+    }
+
+    .scroll-hint svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--text-muted);
+      stroke-width: 2;
+    }
+
     @media (max-width: 768px) {
-      .hero-tweet { max-width: 360px; top: 82%; }
+      .hero-tweet { max-width: 360px; top: 80%; }
     }
   </style>
 </head>
@@ -729,6 +758,9 @@
       <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none">
         <a href="https://twitter.com/PopBase/status/2049342410245709848"></a>
       </blockquote>
+    </div>
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
   </section>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
